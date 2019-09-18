@@ -17,6 +17,7 @@ public class TcpServerEndpoint {
 
     @ServiceActivator(inputChannel = "inboundChannel")
     public byte[] process(byte[] message) {
+    	System.out.println("process - " + message);
         return messageService.processMessage(message);
     }
 
